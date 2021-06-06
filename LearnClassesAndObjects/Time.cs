@@ -13,8 +13,13 @@ namespace LearnClassesAndObjects
         private const int MAXMINUTE = 59;
         private const int MAXSECOND = 59;
 
-        //Свойства
-        public int second
+        //Закрытые поля
+        private int second;
+        private int minute;
+        private int hour;
+        
+        //Свойства для закрытых полей
+        public int Second
         {
             get
             {
@@ -28,7 +33,7 @@ namespace LearnClassesAndObjects
                 }
             }
         }
-        public int minute
+        public int Minute
         {
             get
             {
@@ -42,7 +47,7 @@ namespace LearnClassesAndObjects
                 }
             }
         }
-        public int hour
+        public int Hour
         {
             get
             {
@@ -52,7 +57,7 @@ namespace LearnClassesAndObjects
             {
                 if (hourIsValid(value))
                 {
-                    hour = value;
+                    this.hour = value;
                 }
             }
         }
@@ -64,111 +69,88 @@ namespace LearnClassesAndObjects
         }
         public Time(int hour, int minute, int second)
         {
-            if (hourIsValid(hour))
-            {
-                this.hour = hour;
-            }
-            else
-            {
-                this.hour = 0;
-            }
-
-            if (minuteIsValid(minute))
-            {
-                this.minute = minute;
-            }
-            else
-            {
-                this.minute = 0;
-            }
-
-            if (secondIsValid(second))
-            {
-                this.second = second;
-            }
-            else
-            {
-                this.second = 0;
-            }
+            this.Hour = hour;
+            this.Minute = minute;
+            this.Second = second;
         }
         public Time(int hour, int minute)
         {
             if (hourIsValid(hour))
             {
-                this.hour = hour;
+                this.Hour = hour;
             }
             else
             {
-                this.hour = 0;
+                this.Hour = 0;
             }
 
             if (minuteIsValid(minute))
             {
-                this.minute = minute;
+                this.Minute = minute;
             }
             else
             {
-                this.minute = 0;
+                this.Minute = 0;
             }
 
-            this.second = 0;
+            this.Second = 0;
         }
         public Time(int hour)
         {
             if (hourIsValid(hour))
             {
-                this.hour = hour;
+                this.Hour = hour;
             }
             else
             {
-                this.hour = 0;
+                this.Hour = 0;
             }
 
-            this.minute = 0;
-            this.second = 0;
+            this.Minute = 0;
+            this.Second = 0;
         }
 
         //Основная группа методов
         public void addSecond(int seconds)
         {
-            int sum = second + seconds;
+            int sum = Second + seconds;
             if (secondIsValid(sum))
             {
-                second = sum % 60;
+                Second = sum % 60;
                 int minute = sum / 60;
                 addMinute(minute);
             }
             else
             {
-                second = sum;
+                Second = sum;
             }
 
         }
         public void addMinute(int minutes)
         {
-            int sum = minute + minutes;
+            int sum = Minute + minutes;
             if (minuteIsValid(sum))
             {
-                minute = sum % 60;
+                Minute = sum % 60;
                 int hour = sum / 60;
                 addHour(hour);
 
             }
             else
             {
-                minute = sum;
+                Minute = sum;
             }
         }
         public void addHour(int hours)
         {
-            int sum = hour + hours;
-            hour = sum % 24;
+            int sum = Hour + hours;
+            Hour = sum % 24;
         }
         public string getTime()
         {
-            string hour = getDigitalFormat(this.hour);
-            string minute = getDigitalFormat(this.minute);
-            string second = getDigitalFormat(this.second);
+            string hour = getDigitalFormat(this.Hour);
+            string minute = getDigitalFormat(this.Minute);
+            string second = getDigitalFormat(this.Second);
 
             return $"{hour}:{minute}:{second}";
         }

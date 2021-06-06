@@ -11,14 +11,14 @@ namespace LearnClassesAndObjects
         
         static public Point Plus(Point a, Point b)
         {
-            int x = a.GetX() + b.GetX();
-            int y = a.GetY() + b.GetY();
+            int x = a.x + b.x;
+            int y = a.y + b.y;
             return new Point(x, y);
         }
         static public Point Minuse(Point a, Point b)
         {
-            int x = a.GetX() - b.GetX();
-            int y = a.GetY() - b.GetY();
+            int x = a.x - b.x;
+            int y = a.y - b.y;
             return new Point(x, y);
         }
     }
