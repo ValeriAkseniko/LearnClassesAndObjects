@@ -114,7 +114,7 @@ namespace LearnClassesAndObjects
         public void addSecond(int seconds)
         {
             int sum = Second + seconds;
-            if (secondIsValid(sum))
+            if (!secondIsValid(sum))
             {
                 Second = sum % 60;
                 int minute = sum / 60;
@@ -129,7 +129,7 @@ namespace LearnClassesAndObjects
         public void addMinute(int minutes)
         {
             int sum = Minute + minutes;
-            if (minuteIsValid(sum))
+            if (!minuteIsValid(sum))
             {
                 Minute = sum % 60;
                 int hour = sum / 60;
