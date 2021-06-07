@@ -29,15 +29,15 @@ namespace LearnClassesAndObjects
             Height = height;
             Weight = weight;
         }
-        static public string GetPerson(Person Name)
+        public string GetPerson()
         {
-            return $"{Name.LastName } {Name.FirstName} {Name.MiddleName} , {Name.Gender} , {Name.Age} years old, height - {Name.Height}cm, weight - {Name.Weight}";
+            return $"{LastName } {FirstName} {MiddleName} , {Gender} , {Age} years old, height - {Height}cm, weight - {Weight}";
         }
-        static public string GetFullName(Person Name)
+        public string GetFullName(Person Name)
         {
             return $"{Name.LastName} {Name.FirstName} {Name.MiddleName}";
         }
-        static public string GetInitial(Person Name)
+        public string GetInitial(Person Name)
         {
             return $"{Name.LastName} {Name.FirstName[0]}.{Name.MiddleName[0]}.";
         }

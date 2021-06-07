@@ -9,7 +9,7 @@ namespace LearnClassesAndObjects
     class PersonService
     {
 
-        static public string Highest(Person[] array)
+        public void SortByHighest(Person[] array)
         {
             Person blank;
             for (int i = 0; i < array.Length - 1; i++)
@@ -24,24 +24,51 @@ namespace LearnClassesAndObjects
                     }
                 }
             }
-            return $"The highest - {Person.GetInitial(array[array.Length - 1])}";
+
         }
-        static public string Lowest(Person[] array)
+        public Person Highest(Person[] array)
         {
-            Person blank;
-            for (int i = 0; i < array.Length - 1; i++)
+            if (array == null)
             {
-                for (int j = i + 1; j < array.Length; j++)
+                return null;
+            }
+            if (array.Length == 0)
+            {
+                return null;
+            }
+            int indexMaxHighest = 0;
+            int maxHighest = array[0].Height;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].Height > maxHighest)
                 {
-                    if (array[i].Height > array[j].Height)
-                    {
-                        blank = array[i];
-                        array[i] = array[j];
-                        array[j] = blank;
-                    }
+                    maxHighest = array[i].Height;
+                    indexMaxHighest = i;
                 }
             }
-            return $"The lowest - {Person.GetInitial(array[0])}";
+            return array[indexMaxHighest];
+        }
+        public Person Lowest(Person[] array)
+        {
+            if (array == null)
+            {
+                return null;
+            }
+            if (array.Length == 0)
+            {
+                return null;
+            }
+            int indexMinHighest = 0;
+            int minHighest = array[0].Height;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].Height < minHighest)
+                {
+                    minHighest = array[i].Height;
+                    indexMinHighest = i;
+                }
+            }
+            return array[indexMinHighest];
         }
     }
 }

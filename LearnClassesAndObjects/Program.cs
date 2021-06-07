@@ -34,15 +34,16 @@ namespace LearnClassesAndObjects
             people[3] = aleksandr;
             for (int i = 0; i < people.Length; i++)
             {
-                Console.WriteLine(Person.GetPerson(people[i]));
+                Console.WriteLine(people[i].GetPerson());
             }
             int[] array = new int[4];
             Console.WriteLine();
-            string TopH = PersonService.Highest(people);
-            Console.WriteLine(TopH);
+            PersonService personService = new PersonService();
+            Person highest = personService.Highest(people);
+            Console.WriteLine(highest.GetPerson());
             Console.WriteLine();
-            string TopL = PersonService.Lowest(people);
-            Console.WriteLine(TopL);
+            Person lowest = personService.Lowest(people);
+            Console.WriteLine(lowest.GetPerson());
 
 
 
