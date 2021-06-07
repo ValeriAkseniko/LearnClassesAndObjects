@@ -33,13 +33,13 @@ namespace LearnClassesAndObjects
         {
             return $"{LastName } {FirstName} {MiddleName} , {Gender} , {Age} years old, height - {Height}cm, weight - {Weight}";
         }
-        public string GetFullName(Person Name)
+        public string GetFullName()
         {
-            return $"{Name.LastName} {Name.FirstName} {Name.MiddleName}";
+            return $"{LastName} {FirstName} {MiddleName}";
         }
-        public string GetInitial(Person Name)
+        public string GetInitial()
         {
-            return $"{Name.LastName} {Name.FirstName[0]}.{Name.MiddleName[0]}.";
+            return $"{LastName} {FirstName[0]}.{MiddleName[0]}.";
         }
         
 
