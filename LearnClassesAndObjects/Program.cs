@@ -23,23 +23,23 @@ namespace LearnClassesAndObjects
             //}
 
 
-            Person anastasia = new Person("Anastasia", "Malamanova", "Andreevna", "female", 23, 175);
-            Person artem = new Person("Artem", "Lipinski", "Dmitrievich", "male", 24, 170);
-            Person valera = new Person("Valera", "Akseniko", "Dmitrievich", "male", 24, 178);
-            Person aleksandr = new Person("Aleksandr", "Egorochkin", "Aleksandrovich", "male", 25, 182);
-            Console.WriteLine(PersonFunction.GetPerson(anastasia));
+            Person anastasia = new Person("Anastasia", "Malamanova", "Andreevna", "female", 23, 175, 60);
+            Person artem = new Person("Artem", "Lipinski", "Dmitrievich", "male", 24, 170, 66);
+            Person valera = new Person("Valera", "Akseniko", "Dmitrievich", "male", 24, 178,60);
+            Person aleksandr = new Person("Aleksandr", "Egorochkin", "Aleksandrovich", "male", 25, 182,80);
+            Console.WriteLine(Person.GetPerson(anastasia));
             Console.WriteLine();
-            Console.WriteLine(PersonFunction.GetPerson(artem));
+            Console.WriteLine(Person.GetPerson(artem));
             Console.WriteLine();
-            Console.WriteLine(PersonFunction.GetPerson(valera));
+            Console.WriteLine(Person.GetPerson(valera));
             Console.WriteLine();
-            Console.WriteLine(PersonFunction.GetPerson(aleksandr));
+            Console.WriteLine(Person.GetPerson(aleksandr));
             Console.WriteLine();
-            Console.WriteLine(PersonFunction.GetFullName(anastasia));
-            Console.WriteLine(PersonFunction.GetFullName(aleksandr));
+            Console.WriteLine(Person.GetFullName(anastasia));
+            Console.WriteLine(Person.GetFullName(aleksandr));
             Console.WriteLine();
-            Console.WriteLine(PersonFunction.GetInitial(valera));
-            Console.WriteLine(PersonFunction.GetInitial(artem));
+            Console.WriteLine(Person.GetInitial(valera));
+            Console.WriteLine(Person.GetInitial(artem));
             Console.ReadKey();
 
 
