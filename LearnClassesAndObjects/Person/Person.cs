@@ -15,6 +15,10 @@ namespace LearnClassesAndObjects
         public int Age { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
+        public Person()
+        {
+
+        }
         public Person(string firstName, string lastName, string middleName, string gender, int age, int height, int weight)
         {
             FirstName = firstName;
@@ -27,7 +31,7 @@ namespace LearnClassesAndObjects
         }
         static public string GetPerson(Person Name)
         {
-            return $"{Name.LastName } {Name.FirstName} {Name.MiddleName} , {Name.Gender} , {Name.Age} years old, height - {Name.Height}cm";
+            return $"{Name.LastName } {Name.FirstName} {Name.MiddleName} , {Name.Gender} , {Name.Age} years old, height - {Name.Height}cm, weight - {Name.Weight}";
         }
         static public string GetFullName(Person Name)
         {
@@ -37,6 +41,8 @@ namespace LearnClassesAndObjects
         {
             return $"{Name.LastName} {Name.FirstName[0]}.{Name.MiddleName[0]}.";
         }
+        
+
 
     }
 }
