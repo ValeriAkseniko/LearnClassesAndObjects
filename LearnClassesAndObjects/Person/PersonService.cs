@@ -70,5 +70,49 @@ namespace LearnClassesAndObjects
             }
             return array[indexMinHighest];
         }
+        public Person FirstOlder(Person[] array)
+        {
+            if (array == null)
+            {
+                return null;
+            }
+            if (array.Length == 0)
+            {
+                return null;
+            }
+            int indexOldest = 0;
+            int oldest = array[0].Age;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].Age > oldest)
+                {
+                    oldest = array[i].Age;
+                    indexOldest = i;
+                }
+            }
+            return array[indexOldest];
+        }
+        public Person FirstYoung(Person[] array)
+        {
+            if (array == null)
+            {
+                return null;
+            }
+            if (array.Length == 0)
+            {
+                return null;
+            }
+            int indexYoungest = 0;
+            int youngest = array[0].Age;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].Age < youngest)
+                {
+                    youngest = array[i].Age;
+                    indexYoungest = i;
+                }
+            }
+            return array[indexYoungest];
+        }
     }
 }

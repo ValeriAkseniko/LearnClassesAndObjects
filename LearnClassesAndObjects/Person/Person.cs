@@ -29,7 +29,7 @@ namespace LearnClassesAndObjects
             Height = height;
             Weight = weight;
         }
-        public string GetPerson()
+        public string GetInfo()
         {
             return $"{LastName } {FirstName} {MiddleName} , {Gender} , {Age} years old, height - {Height}cm, weight - {Weight}";
         }
