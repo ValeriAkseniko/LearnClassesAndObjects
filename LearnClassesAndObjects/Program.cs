@@ -27,11 +27,13 @@ namespace LearnClassesAndObjects
             Person artem = new Person("Artem", "Lipinski", "Dmitrievich", "male", 24, 170, 66);
             Person valera = new Person("Valera", "Akseniko", "Dmitrievich", "male", 24, 178, 60);
             Person aleksandr = new Person("Aleksandr", "Egorochkin", "Aleksandrovich", "male", 25, 182, 80);
-            Person[] people = new Person[4];
+            Person nika = new Person("Veronika", "Malamanova", "Dmitrievna", "famel", 25, 160, 50);
+            Person[] people = new Person[5];
             people[0] = anastasia;
             people[1] = artem;
             people[2] = valera;
             people[3] = aleksandr;
+            people[4] = nika;
             for (int i = 0; i < people.Length; i++)
             {
                 Console.WriteLine(people[i].GetInfo());
@@ -39,15 +41,10 @@ namespace LearnClassesAndObjects
             int[] array = new int[4];
             Console.WriteLine();
             PersonService personService = new PersonService();
-            //Person oldest = personService.FirstOlder(people);
-            //Console.WriteLine(oldest.GetInfo());
-            //Person youngest = personService.FirstYoung(people);
-            //Console.WriteLine(youngest.GetInfo());
-            var list = new List<Person>();
-            list = personService.Gender(people);
-            for (int i = 0; i < list.Count; i++)
+            personService.SortFullName(people);
+            for (int i = 0; i < people.Length; i++)
             {
-                Console.WriteLine(list[i].GetInfo());
+                Console.WriteLine(people[i].GetInfo());
             }
 
 

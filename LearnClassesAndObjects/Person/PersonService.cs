@@ -114,7 +114,7 @@ namespace LearnClassesAndObjects
             }
             return array[indexYoungest];
         }
-        public List<Person> Gender(Person[] array)
+        public List<Person> GetMaleList(Person[] array)
         {
             var listPerson = new List<Person>();
             if (array == null)
@@ -133,6 +133,58 @@ namespace LearnClassesAndObjects
                 }
             }
             return listPerson;
+        }
+        public List<Person> GetFemaleList(Person[] array)
+        {
+            var listPerson = new List<Person>();
+            if (array == null)
+            {
+                return null;
+            }
+            if (array.Length == 0)
+            {
+                return null;
+            }
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].Gender == "female")
+                {
+                    listPerson.Add(array[i]);
+                }
+            }
+            return listPerson;
+        }
+        public void SortFullName (Person[] array)
+        {
+            Person blank;
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (string.Compare(array[i].LastName, array[j].LastName) > 0)
+                    {
+                        blank = array[i];
+                        array[i] = array[j];
+                        array[j] = blank;
+                    }
+                }
+            }
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i+1; j < array.Length; j++)
+                {
+                    if (array[i].LastName == array[j].LastName)
+                    {
+                        if (string.Compare(array[i].FirstName,array[j].FirstName) > 0)
+                        {
+                            blank = array[i];
+                            array[i] = array[j];
+                            array[j] = blank;
+                        }
+                    }
+                }
+                
+            }
         }
     }
 }
