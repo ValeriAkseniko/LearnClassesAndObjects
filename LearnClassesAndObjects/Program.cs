@@ -39,10 +39,16 @@ namespace LearnClassesAndObjects
             int[] array = new int[4];
             Console.WriteLine();
             PersonService personService = new PersonService();
-            Person oldest = personService.FirstOlder(people);
-            Console.WriteLine(oldest.GetInfo());
-            Person youngest = personService.FirstYoung(people);
-            Console.WriteLine(youngest.GetInfo());
+            //Person oldest = personService.FirstOlder(people);
+            //Console.WriteLine(oldest.GetInfo());
+            //Person youngest = personService.FirstYoung(people);
+            //Console.WriteLine(youngest.GetInfo());
+            var list = new List<Person>();
+            list = personService.Gender(people);
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine(list[i].GetInfo());
+            }
 
 
 

@@ -114,5 +114,25 @@ namespace LearnClassesAndObjects
             }
             return array[indexYoungest];
         }
+        public List<Person> Gender(Person[] array)
+        {
+            var listPerson = new List<Person>();
+            if (array == null)
+            {
+                return null;
+            }
+            if (array.Length == 0)
+            {
+                return null;
+            }
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].Gender == "male")
+                {
+                    listPerson.Add(array[i]);
+                }
+            }
+            return listPerson;
+        }
     }
 }
