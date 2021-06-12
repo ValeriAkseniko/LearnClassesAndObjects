@@ -123,13 +123,13 @@ namespace LearnClassesAndObjects
             {
                 this.LastName = "DefaultLastName";
             }
-            if (IsValid(middleName))
+            if (IsValid(middleName,false))
             {
                 this.MiddleName = middleName;
             }
             else
             {
-                this.MiddleName = string.Empty;
+                this.MiddleName = "DefaultMiddleName";
             }
             Gender = gender;
             if (IsValid(age))
