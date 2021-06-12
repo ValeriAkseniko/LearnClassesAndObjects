@@ -27,7 +27,7 @@ namespace LearnClassesAndObjects
             Person artem = new Person("Artem", "Lipinski", "Dmitrievich", "male", 24, 170, 66);
             Person valera = new Person("Valera", "Akseniko", "Dmitrievich", "male", 24, 178, 60);
             Person aleksandr = new Person("Aleksandr", "Egorochkin", "Aleksandrovich", "male", 25, 182, 80);
-            Person nika = new Person("Veronika", "Egorochkina", "Dmitrievna", "famel", 25, 160, 50);
+            Person nika = new Person("Veronika", "Egorochkina", "Dmitrievna", "famel", 22, 165, 50);
             Person[] people = new Person[5];
             people[0] = anastasia;
             people[1] = artem;
