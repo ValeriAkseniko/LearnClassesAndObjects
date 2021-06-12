@@ -8,7 +8,13 @@ namespace LearnClassesAndObjects
 {
     class PersonService
     {
-
+        public void Print(Person[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i].GetInfo());
+            }
+        }
         public void SortByHighest(Person[] array)
         {
             Person blank;
@@ -37,7 +43,7 @@ namespace LearnClassesAndObjects
                 return null;
             }
             int indexMaxHighest = 0;
-            int maxHighest = array[0].Height;
+            double maxHighest = array[0].Height;
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i].Height > maxHighest)
@@ -59,7 +65,7 @@ namespace LearnClassesAndObjects
                 return null;
             }
             int indexMinHighest = 0;
-            int minHighest = array[0].Height;
+            double minHighest = array[0].Height;
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i].Height < minHighest)
@@ -154,37 +160,21 @@ namespace LearnClassesAndObjects
             }
             return listPerson;
         }
-        public void SortFullName (Person[] array)
+        public void SortByFullName (Person[] array)
         {
             Person blank;
             for (int i = 0; i < array.Length - 1; i++)
             {
                 for (int j = i + 1; j < array.Length; j++)
                 {
-                    if (string.Compare(array[i].LastName, array[j].LastName) > 0)
+                    if (string.Compare(array[i].GetFullName(), array[j].GetFullName()) > 0)
                     {
                         blank = array[i];
                         array[i] = array[j];
                         array[j] = blank;
                     }
                 }
-            }
-            for (int i = 0; i < array.Length; i++)
-            {
-                for (int j = i+1; j < array.Length; j++)
-                {
-                    if (array[i].LastName == array[j].LastName)
-                    {
-                        if (string.Compare(array[i].FirstName,array[j].FirstName) > 0)
-                        {
-                            blank = array[i];
-                            array[i] = array[j];
-                            array[j] = blank;
-                        }
-                    }
-                }
-                
-            }
+            }            
         }
     }
 }

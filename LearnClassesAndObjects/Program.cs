@@ -27,7 +27,7 @@ namespace LearnClassesAndObjects
             Person artem = new Person("Artem", "Lipinski", "Dmitrievich", "male", 24, 170, 66);
             Person valera = new Person("Valera", "Akseniko", "Dmitrievich", "male", 24, 178, 60);
             Person aleksandr = new Person("Aleksandr", "Egorochkin", "Aleksandrovich", "male", 25, 182, 80);
-            Person nika = new Person("Veronika", "Malamanova", "Dmitrievna", "famel", 25, 160, 50);
+            Person nika = new Person("Veronika", "Egorochkina", "Dmitrievna", "famel", 25, 160, 50);
             Person[] people = new Person[5];
             people[0] = anastasia;
             people[1] = artem;
@@ -41,11 +41,9 @@ namespace LearnClassesAndObjects
             int[] array = new int[4];
             Console.WriteLine();
             PersonService personService = new PersonService();
-            personService.SortFullName(people);
-            for (int i = 0; i < people.Length; i++)
-            {
-                Console.WriteLine(people[i].GetInfo());
-            }
+            personService.SortByFullName(people);
+            personService.Print(people);
+            
 
 
 
