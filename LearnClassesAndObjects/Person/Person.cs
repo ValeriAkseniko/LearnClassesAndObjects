@@ -13,15 +13,16 @@ namespace LearnClassesAndObjects
         public string MiddleName { get; set; }
         public string Gender { get; set; }
         public int Age { get; set; }
-        public int Height { get; set; }
-        public int Weight { get; set; }
+        
         public string Email { get; set; }
         
+        public double Height { get; set; }
+        public double Weight { get; set; }
         public Person()
         {
 
         }
-        public Person(string firstName, string lastName, string middleName, string gender, int age, int height, int weight, string email = null)
+        public Person(string firstName, string lastName, string middleName, string gender, int age, double height, double weight, string email = null)
         {
             FirstName = firstName;
             LastName = lastName;
