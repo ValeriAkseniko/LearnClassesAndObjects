@@ -11,9 +11,51 @@ namespace LearnClassesAndObjects
         private int age;
         private double height;
         private double weight;
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string MiddleName { get; set; }
+        private string firstName;
+        private string lastName;
+        private string middleName;
+        public string FirstName
+        {
+            get
+            {
+                return this.firstName;
+            }
+            set
+            {
+                if (IsValid(value))
+                {
+                    this.firstName = value;
+                }
+            }
+        }
+        public string LastName
+        {
+            get
+            {
+                return this.lastName;
+            }
+            set
+            {
+                if (IsValid(value))
+                {
+                    this.lastName = value;
+                }
+            }
+        }
+        public string MiddleName
+        {
+            get
+            {
+                return this.middleName;
+            }
+            set
+            {
+                if (IsValid(value))
+                {
+                    this.middleName = value;
+                }
+            }
+        }
         public string Gender { get; set; }
         public int Age
         {
@@ -30,7 +72,7 @@ namespace LearnClassesAndObjects
             }
         }
         public string Email { get; set; }
-        
+
         public double Height
         {
             get
@@ -65,9 +107,30 @@ namespace LearnClassesAndObjects
         }
         public Person(string firstName, string lastName, string middleName, string gender, int age, double height, double weight, string email = null)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            MiddleName = middleName;
+            if (IsValid(firstName))
+            {
+                this.FirstName = firstName;
+            }
+            else
+            {
+                this.FirstName = "DefaultFirstName";
+            }
+            if (IsValid(lastName))
+            {
+                this.LastName = lastName;
+            }
+            else
+            {
+                this.LastName = "DefaultLastName";
+            }
+            if (IsValid(middleName))
+            {
+                this.MiddleName = middleName;
+            }
+            else
+            {
+                this.MiddleName = string.Empty;
+            }
             Gender = gender;
             if (IsValid(age))
             {
@@ -109,15 +172,26 @@ namespace LearnClassesAndObjects
         }
         public bool IsValid(int age)
         {
-            return age > 0;
+            return age >= 0;
         }
         public bool IsValid(double heightOrWeight)
         {
             return heightOrWeight > 0;
         }
+        public bool IsValid(string str, bool checkEmpty = true)
+        {
+            if (checkEmpty)
+            {
+                return str != null && str != string.Empty;
+            }
+            else
+            {
+                return str != null;
+            }
 
 
 
 
+        }
     }
 }
