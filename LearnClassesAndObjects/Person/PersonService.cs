@@ -133,7 +133,7 @@ namespace LearnClassesAndObjects
             }
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i].Gender == "male")
+                if (array[i].Gender == (Gender)1)
                 {
                     listPerson.Add(array[i]);
                 }
@@ -153,7 +153,7 @@ namespace LearnClassesAndObjects
             }
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i].Gender == "female")
+                if (array[i].Gender == (Gender)0)
                 {
                     listPerson.Add(array[i]);
                 }

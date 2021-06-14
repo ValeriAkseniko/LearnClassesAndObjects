@@ -1,8 +1,8 @@
 ﻿namespace LearnClassesAndObjects
 {
-    enum EnumGender
+    enum Gender
     {
-        wonam,
-        man
+        Woman,
+        Man
     }
 }

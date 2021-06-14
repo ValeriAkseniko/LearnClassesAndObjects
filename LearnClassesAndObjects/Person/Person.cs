@@ -56,7 +56,7 @@ namespace LearnClassesAndObjects
                 }
             }
         }
-        public string Gender { get; set; }
+        public Gender Gender { get; set; }
         public int Age
         {
             get
@@ -105,7 +105,7 @@ namespace LearnClassesAndObjects
         {
 
         }
-        public Person(string firstName, string lastName, string middleName, EnumGender gender, int age, double height, double weight, string email = null)
+        public Person(string firstName, string lastName, string middleName, Gender gender, int age, double height, double weight, string email = null)
         {
             if (IsValid(firstName))
             {
@@ -131,13 +131,13 @@ namespace LearnClassesAndObjects
             {
                 this.MiddleName = "DefaultMiddleName";
             }
-            if (gender == (EnumGender)1)
+            if (gender == (Gender)1)
             {
-                this.Gender = "Mam";
+                this.Gender = (Gender)1;
             }
             else
             {
-                this.Gender = "Woman";
+                this.Gender = (Gender)0;
             }
             if (IsValid(age))
             {
