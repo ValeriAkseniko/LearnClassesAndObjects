@@ -56,7 +56,7 @@ namespace LearnClassesAndObjects
                 }
             }
         }
-        public string Gender { get; set; }
+        public Gender Gender { get; set; }
         public int Age
         {
             get
@@ -105,7 +105,7 @@ namespace LearnClassesAndObjects
         {
 
         }
-        public Person(string firstName, string lastName, string middleName, string gender, int age, double height, double weight, string email = null)
+        public Person(string firstName, string lastName, string middleName, Gender gender, int age, double height, double weight, string email = null)
         {
             if (IsValid(firstName))
             {
@@ -131,7 +131,7 @@ namespace LearnClassesAndObjects
             {
                 this.MiddleName = "DefaultMiddleName";
             }
-            Gender = gender;
+            this.Gender = gender;
             if (IsValid(age))
             {
                 this.Age = age;
