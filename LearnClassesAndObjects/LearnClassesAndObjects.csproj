@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnumGender.cs" />
     <Compile Include="Person\PersonService.cs" />
     <Compile Include="Person\Person.cs" />
     <Compile Include="Point.cs" />

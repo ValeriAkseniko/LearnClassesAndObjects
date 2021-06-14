@@ -23,11 +23,11 @@ namespace LearnClassesAndObjects
             //}
 
 
-            Person anastasia = new Person("Anastasia", "Malamanova", "Andreevna", "female", 23, 175, 60);
-            Person artem = new Person("Artem","Lipinski","Dmitrievich", "male", 24, 170, 66);
-            Person valera = new Person("Valera", "Akseniko", "Dmitrievich", "male", 24, 178, 60);
-            Person aleksandr = new Person("Aleksandr", "Egorochkin","Aleksandrovich", "male", 25, 182, 80);
-            Person nika = new Person("Veronika", "Egorochkina", "Dmitrievna", "famel", 22, 165, 50);
+            Person anastasia = new Person("Anastasia", "Malamanova", "Andreevna", EnumGender.wonam, 23, 175, 60);
+            Person artem = new Person("Artem","Lipinski","Dmitrievich", EnumGender.man, 24, 170, 66);
+            Person valera = new Person("Valera", "Akseniko", "Dmitrievich", EnumGender.man, 24, 178, 60);
+            Person aleksandr = new Person("Aleksandr", "Egorochkin","Aleksandrovich", EnumGender.man, 25, 182, 80);
+            Person nika = new Person("Veronika", "Egorochkina", "Dmitrievna", EnumGender.wonam, 22, 165, 50);
             Person[] people = new Person[5];
             people[0] = anastasia;
             people[1] = artem;
@@ -40,9 +40,7 @@ namespace LearnClassesAndObjects
             }
             int[] array = new int[4];
             Console.WriteLine();
-            PersonService personService = new PersonService();
-            personService.SortByFullName(people);
-            personService.Print(people);
+           
             
 
 

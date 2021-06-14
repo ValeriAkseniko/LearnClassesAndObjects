@@ -105,7 +105,7 @@ namespace LearnClassesAndObjects
         {
 
         }
-        public Person(string firstName, string lastName, string middleName, string gender, int age, double height, double weight, string email = null)
+        public Person(string firstName, string lastName, string middleName, EnumGender gender, int age, double height, double weight, string email = null)
         {
             if (IsValid(firstName))
             {
@@ -131,7 +131,14 @@ namespace LearnClassesAndObjects
             {
                 this.MiddleName = "DefaultMiddleName";
             }
-            Gender = gender;
+            if (gender == (EnumGender)1)
+            {
+                this.Gender = "Mam";
+            }
+            else
+            {
+                this.Gender = "Woman";
+            }
             if (IsValid(age))
             {
                 this.Age = age;
