@@ -131,14 +131,7 @@ namespace LearnClassesAndObjects
             {
                 this.MiddleName = "DefaultMiddleName";
             }
-            if (gender == (Gender)1)
-            {
-                this.Gender = (Gender)1;
-            }
-            else
-            {
-                this.Gender = (Gender)0;
-            }
+            this.Gender = gender;
             if (IsValid(age))
             {
                 this.Age = age;
