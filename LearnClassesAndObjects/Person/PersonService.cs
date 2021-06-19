@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LearnClassesAndObjects
 {
     class PersonService
     {
-        public void Print(Person[] array)
+        public void Print(List<Person> Person)
         {
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < Person.Count; i++)
             {
-                Console.WriteLine(array[i].GetInfo());
+                Console.WriteLine(Person[i].GetInfo());
             }
         }
         public void SortByHighest(Person[] array)
@@ -160,7 +157,7 @@ namespace LearnClassesAndObjects
             }
             return listPerson;
         }
-        public void SortByFullName (Person[] array)
+        public void SortByFullName(Person[] array)
         {
             Person blank;
             for (int i = 0; i < array.Length - 1; i++)
@@ -174,7 +171,22 @@ namespace LearnClassesAndObjects
                         array[j] = blank;
                     }
                 }
-            }            
+            }
+        }
+        public Person PersonFromConsole()
+        {
+            Person newPerson = new Person();            
+            newPerson.FirstName = Console.ReadLine();
+            newPerson.LastName = Console.ReadLine();
+            newPerson.MiddleName = Console.ReadLine();
+            newPerson.Gender = Gender.Woman;
+            string age = Console.ReadLine();
+            newPerson.Age = int.Parse(age);
+            string height = Console.ReadLine();
+            newPerson.Height = int.Parse(height);
+            string weight = Console.ReadLine();
+            newPerson.Weight = int.Parse(weight);
+            return newPerson;
         }
     }
 }
