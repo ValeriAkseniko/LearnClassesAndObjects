@@ -23,11 +23,11 @@ namespace LearnClassesAndObjects
             //}
 
 
-            Person anastasia = new Person("Anastasia", "Malamanova", "Andreevna", Gender.Woman, 23, 175, 60);
-            Person artem = new Person("Artem","Lipinski","Dmitrievich", Gender.Man, 24, 170, 66);
-            Person valera = new Person("Valera", "Akseniko", "Dmitrievich", Gender.Man, 24, 178, 60);
-            Person aleksandr = new Person("Aleksandr", "Egorochkin","Aleksandrovich", Gender.Man, 25, 182, 80);
-            Person nika = new Person("Veronika", "Egorochkina", "Dmitrievna", Gender.Woman, 22, 165, 50);
+            Person anastasia = new Person(1 ,"Anastasia", "Malamanova", "Andreevna", Gender.Woman, 23, 175, 60);
+            Person artem = new Person(2 ,"Artem","Lipinski","Dmitrievich", Gender.Man, 24, 170, 66);
+            Person valera = new Person(3 ,"Valera", "Akseniko", "Dmitrievich", Gender.Man, 24, 178, 60);
+            Person aleksandr = new Person(4 ,"Aleksandr", "Egorochkin","Aleksandrovich", Gender.Man, 25, 183, 86);
+            Person nika = new Person(5 ,"Veronika", "Egorochkina", "Dmitrievna", Gender.Woman, 22, 165, 50);
             Person[] people = new Person[5];
             people[0] = anastasia;
             people[1] = artem;

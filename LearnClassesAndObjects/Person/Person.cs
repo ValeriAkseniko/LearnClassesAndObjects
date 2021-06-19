@@ -72,6 +72,7 @@ namespace LearnClassesAndObjects
             }
         }
         public string Email { get; set; }
+        public int Guid { get; set; }
 
         public double Height
         {
@@ -105,7 +106,7 @@ namespace LearnClassesAndObjects
         {
 
         }
-        public Person(string firstName, string lastName, string middleName, Gender gender, int age, double height, double weight, string email = null)
+        public Person(int guid ,string firstName, string lastName, string middleName, Gender gender, int age, double height, double weight, string email = null)
         {
             if (IsValid(firstName))
             {
@@ -157,6 +158,7 @@ namespace LearnClassesAndObjects
                 this.Weight = 0;
             }
             Email = email;
+            Guid = guid;
         }
         public string GetInfo()
         {
