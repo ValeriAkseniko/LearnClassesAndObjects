@@ -8,11 +8,11 @@ namespace LearnClassesAndObjects
 {
     class PersonService
     {
-        public void Print(Person[] array)
+        public void Print(List<Person> listPerson)
         {
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < listPerson.Count; i++)
             {
-                Console.WriteLine(array[i].GetInfo());
+                Console.WriteLine(listPerson[i].GetInfo());
             }
         }
         public void SortByHighest(Person[] array)
@@ -160,7 +160,7 @@ namespace LearnClassesAndObjects
             }
             return listPerson;
         }
-        public void SortByFullName (Person[] array)
+        public void SortByFullName(Person[] array)
         {
             Person blank;
             for (int i = 0; i < array.Length - 1; i++)
@@ -174,7 +174,40 @@ namespace LearnClassesAndObjects
                         array[j] = blank;
                     }
                 }
-            }            
+            }
+        }
+        public double AverageHeight(List<Person> listPerson)
+        {
+            double average = 0;
+            int i;
+            for (i = 0; i < listPerson.Count; i++)
+            {
+                average = average + listPerson[i].Height;
+            }
+            average = average / i;
+            return average;
+        }
+        public double AverageWeight(List<Person> listPerson)
+        {
+            double average = 0;
+            int i;
+            for (i = 0; i < listPerson.Count; i++)
+            {
+                average = average + listPerson[i].Weight;
+            }
+            average = average / i;
+            return average;
+        }
+        public int AverageAge(List<Person> listPerson)
+        {
+            int average = 0;
+            int i;
+            for (i = 0; i < listPerson.Count; i++)
+            {
+                average = average + listPerson[i].Age;
+            }
+            average = average / i;
+            return average;
         }
     }
 }
