@@ -28,20 +28,20 @@ namespace LearnClassesAndObjects
             Person valera = new Person("Valera", "Akseniko", "Dmitrievich", Gender.Man, 24, 178, 60);
             Person aleksandr = new Person("Aleksandr", "Egorochkin","Aleksandrovich", Gender.Man, 25, 182, 80);
             Person nika = new Person("Veronika", "Egorochkina", "Dmitrievna", Gender.Woman, 22, 165, 50);
-            Person[] people = new Person[5];
-            people[0] = anastasia;
-            people[1] = artem;
-            people[2] = valera;
-            people[3] = aleksandr;
-            people[4] = nika;
-            for (int i = 0; i < people.Length; i++)
-            {
-                Console.WriteLine(people[i].GetInfo());
-            }
-            int[] array = new int[4];
+            var listPerson = new List<Person>();
+            listPerson.Add(anastasia);
+            listPerson.Add(artem);
+            listPerson.Add(valera);
+            listPerson.Add(aleksandr);
+            listPerson.Add(nika);
+            PersonService personService = new PersonService();
+            personService.Print(listPerson);
             Console.WriteLine();
-           
-            
+            Console.WriteLine(personService.AverageHeight(listPerson));
+            Console.WriteLine(personService.AverageWeight(listPerson));
+            Console.WriteLine(personService.AverageAge(listPerson));
+
+
 
 
 
