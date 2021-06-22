@@ -230,5 +230,28 @@ namespace LearnClassesAndObjects
             }
 
         }
+        public Person PersonFromConsole()
+        {
+            Person newPerson = new Person();
+            Console.Write("first name: ");
+            newPerson.FirstName = Console.ReadLine();
+            Console.Write("last name: ");
+            newPerson.LastName = Console.ReadLine();
+            Console.Write("middle name: ");
+            newPerson.MiddleName = Console.ReadLine();
+            Console.Write("0 for woman, 1 for man: ");
+            int intGender = int.Parse(Console.ReadLine());
+            newPerson.Gender = (Gender)intGender;
+            Console.Write("age: ");
+            string age = Console.ReadLine();
+            newPerson.Age = int.Parse(age);
+            Console.Write("height: ");
+            string height = Console.ReadLine();
+            newPerson.Height = int.Parse(height);
+            Console.Write("weight: ");
+            string weight = Console.ReadLine();
+            newPerson.Weight = int.Parse(weight);
+            return newPerson;
+        }
     }
 }
