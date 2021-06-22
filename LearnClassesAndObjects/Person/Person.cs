@@ -164,6 +164,10 @@ namespace LearnClassesAndObjects
         {
             return $"{LastName } {FirstName} {MiddleName} , {Gender} , {Age} years old, height - {Height}cm, weight - {Weight}";
         }
+        public string InfoForWrite()
+        {
+            return $"{LastName}|{FirstName}|{MiddleName}|{Gender}|{Age}|{Height}|{Weight}|{Id}";
+        }
         public string GetFullName()
         {
             return $"{LastName} {FirstName} {MiddleName}";
