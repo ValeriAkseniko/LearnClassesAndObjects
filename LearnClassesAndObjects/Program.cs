@@ -27,18 +27,6 @@ namespace LearnClassesAndObjects
             };
             PersonService personService = new PersonService();
             personService.Print(listPerson);
-            Person newPerson = personService.PersonFromConsole();
-            listPerson.Add(newPerson);
-            personService.Print(listPerson);
-            Console.WriteLine();
-            Console.WriteLine(personService.AverageHeight(listPerson));
-            Console.WriteLine(personService.AverageWeight(listPerson));
-            Console.WriteLine(personService.AverageAge(listPerson));
-
-
-
-
-
             Console.ReadKey();
 
 
