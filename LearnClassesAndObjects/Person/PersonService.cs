@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LearnClassesAndObjects
 {
     class PersonService
     {
-        public void Print(List<Person> Person)
+        public void Print(List<Person> listPerson)
         {
-            for (int i = 0; i < Person.Count; i++)
+            for (int i = 0; i < listPerson.Count; i++)
             {
-                Console.WriteLine(Person[i].GetInfo());
+                Console.WriteLine(listPerson[i].GetInfo());
             }
         }
         public void SortByHighest(Person[] array)
@@ -172,6 +175,60 @@ namespace LearnClassesAndObjects
                     }
                 }
             }
+        }
+        public double AverageHeight(List<Person> listPerson)
+        {
+            if (listPerson != null)
+            {
+                double average = 0;
+                for (int i = 0; i < listPerson.Count; i++)
+                {
+                    average = average + listPerson[i].Height;
+                }
+                average = average / listPerson.Count;
+                return average;
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+        public double AverageWeight(List<Person> listPerson)
+        {
+            if (listPerson != null)
+            {
+                double average = 0;
+                for (int i = 0; i < listPerson.Count; i++)
+                {
+                    average = average + listPerson[i].Weight;
+                }
+                average = average / listPerson.Count;
+                return average;
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+        public int AverageAge(List<Person> listPerson)
+        {
+            if (listPerson != null)
+            {
+                int average = 0;
+                for (int i = 0; i < listPerson.Count; i++)
+                {
+                    average = average + listPerson[i].Age;
+                }
+                average = average / listPerson.Count;
+                return average;
+            }
+            else
+            {
+                return 0;
+            }
+
         }
         public Person PersonFromConsole()
         {
