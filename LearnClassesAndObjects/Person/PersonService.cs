@@ -178,36 +178,57 @@ namespace LearnClassesAndObjects
         }
         public double AverageHeight(List<Person> listPerson)
         {
-            double average = 0;
-            int i;
-            for (i = 0; i < listPerson.Count; i++)
+            if (listPerson != null)
             {
-                average = average + listPerson[i].Height;
+                double average = 0;
+                for (int i = 0; i < listPerson.Count; i++)
+                {
+                    average = average + listPerson[i].Height;
+                }
+                average = average / listPerson.Count;
+                return average;
             }
-            average = average / i;
-            return average;
+            else
+            {
+                return 0;
+            }
+
         }
         public double AverageWeight(List<Person> listPerson)
         {
-            double average = 0;
-            int i;
-            for (i = 0; i < listPerson.Count; i++)
+            if (listPerson != null)
             {
-                average = average + listPerson[i].Weight;
+                double average = 0;
+                for (int i = 0; i < listPerson.Count; i++)
+                {
+                    average = average + listPerson[i].Weight;
+                }
+                average = average / listPerson.Count;
+                return average;
             }
-            average = average / i;
-            return average;
+            else
+            {
+                return 0;
+            }
+
         }
         public int AverageAge(List<Person> listPerson)
         {
-            int average = 0;
-            int i;
-            for (i = 0; i < listPerson.Count; i++)
+            if (listPerson != null)
             {
-                average = average + listPerson[i].Age;
+                int average = 0;
+                for (int i = 0; i < listPerson.Count; i++)
+                {
+                    average = average + listPerson[i].Age;
+                }
+                average = average / listPerson.Count;
+                return average;
             }
-            average = average / i;
-            return average;
+            else
+            {
+                return 0;
+            }
+
         }
     }
 }
