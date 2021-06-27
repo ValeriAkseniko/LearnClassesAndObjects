@@ -244,9 +244,9 @@ namespace LearnClassesAndObjects
             Console.Write("0 for woman, 1 for man: ");
             int intGender = int.Parse(Console.ReadLine());
             newPerson.Gender = (Gender)intGender;
-            Console.Write("age: ");
-            string age = Console.ReadLine();
-            newPerson.Age = int.Parse(age);
+            Console.Write("birthday: ");
+            string birthday = Console.ReadLine();
+            newPerson.Birthday = DateTime.Parse(birthday);
             Console.Write("height: ");
             string height = Console.ReadLine();
             newPerson.Height = int.Parse(height);
@@ -286,7 +286,7 @@ namespace LearnClassesAndObjects
                     person.LastName = strArray[1];
                     person.MiddleName = strArray[2];
                     person.Gender = (Gender)Enum.Parse(typeof(Gender), strArray[3]);
-                    person.Age = int.Parse(strArray[4]);
+                    person.Birthday = DateTime.Parse(strArray[4]);
                     person.Height = double.Parse(strArray[5]);
                     person.Weight = double.Parse(strArray[6]);
                     person.Id = int.Parse(strArray[7]);

@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace LearnClassesAndObjects
 {
     class Person
-    {
-        private int age;
+    {        
         private double height;
         private double weight;
         private string firstName;
@@ -61,15 +60,30 @@ namespace LearnClassesAndObjects
         {
             get
             {
-                return this.age;
-            }
-            set
-            {
-                if (IsValid(value))
+                int age = DateTime.Now.Year - Birthday.Year;
+                if (Birthday.Month == DateTime.Now.Month)
                 {
-                    age = value;
+                    if (Birthday.Day < DateTime.Now.Day)
+                    {
+                        return age - 1;
+                    }
+                    else
+                        return age;
                 }
+
+                if (Birthday.Month < DateTime.Now.Month)
+                {
+                    return age;
+                }
+
+                if (Birthday.Month > DateTime.Now.Month)
+                {
+                    return age - 1;
+                }
+
+                return age;
             }
+
         }
         public string Email { get; set; }
         public int Id { get; set; }
@@ -102,11 +116,12 @@ namespace LearnClassesAndObjects
                 }
             }
         }
+        public DateTime Birthday { get; set; }
         public Person()
         {
 
         }
-        public Person(int id ,string firstName, string lastName, string middleName, Gender gender, int age, double height, double weight, string email = null)
+        public Person(int id ,string firstName, string lastName, string middleName, Gender gender, DateTime birthday, double height, double weight, string email = null)
         {
             if (IsValid(firstName))
             {
@@ -133,14 +148,6 @@ namespace LearnClassesAndObjects
                 this.MiddleName = "DefaultMiddleName";
             }
             this.Gender = gender;
-            if (IsValid(age))
-            {
-                this.Age = age;
-            }
-            else
-            {
-                this.Age = 0;
-            }
             if (IsValid(height))
             {
                 this.Height = height;
@@ -166,7 +173,7 @@ namespace LearnClassesAndObjects
         }
         public string InfoForWrite()
         {
-            return $"{LastName}|{FirstName}|{MiddleName}|{Gender}|{Age}|{Height}|{Weight}|{Id}";
+            return $"{FirstName}|{LastName}|{MiddleName}|{Gender}|{Birthday.ToString("dd.MM.yyyy")}|{Height}|{Weight}|{Id}";
         }
         public string GetFullName()
         {
