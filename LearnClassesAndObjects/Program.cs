@@ -16,6 +16,8 @@ namespace LearnClassesAndObjects
         {
             List<Person> listPersons = personService.ReadFromTxt(path);
             personService.Print(listPersons);
+
+            personService.WriteToTxt(path, listPersons, true);
             Console.ReadKey();
 
 
