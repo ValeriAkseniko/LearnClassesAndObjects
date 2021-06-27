@@ -14,16 +14,32 @@ namespace LearnClassesAndObjects
         static PersonService personService = new PersonService();
         static void Main(string[] args)
         {
-            List<Person> listPersons = personService.ReadFromTxt(path);
-            personService.Print(listPersons);
+            Product Sir = new Product
+            {
+                Calories = 140.2,
+                ID = Guid.NewGuid(),
+                Name = "Sir",
+                Weight = 115.3,
+                Price = 250.5m,
+                CreationDate = DateTime.Now
+            };
+            Product Sir2 = new Product
+            {
+                Calories = 140.2,
+                ID = Guid.NewGuid(),
+                Name = "Sir",
+                Weight = 115.3,
+                Price = 250.5m,
+                CreationDate = DateTime.Now
+            };
 
-            personService.WriteToTxt(path, listPersons, true);
+            Sir = Sir2;
+            Sir2.Price = 0.0m;
+
+
+            Console.WriteLine(Sir.GetInfo());
             Console.ReadKey();
-
-
-
-
         }
-        
+
     }
 }
