@@ -65,6 +65,14 @@ namespace LearnClassesAndObjects
         }
         public Product MaxPrice(List<Product> listProducts)
         {
+            if (listProducts == null)
+            {
+                return null;
+            }
+            if (listProducts.Count == 0)
+            {
+                return null;
+            }
             Product Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
@@ -77,6 +85,14 @@ namespace LearnClassesAndObjects
         }
         public Product MinPrice(List<Product> listProducts)
         {
+            if (listProducts == null)
+            {
+                return null;
+            }
+            if (listProducts.Count == 0)
+            {
+                return null;
+            }
             Product Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
@@ -89,6 +105,14 @@ namespace LearnClassesAndObjects
         }
         public Product MaxCalories(List<Product> listProducts)
         {
+            if (listProducts == null)
+            {
+                return null;
+            }
+            if (listProducts.Count == 0)
+            {
+                return null;
+            }
             Product Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
@@ -101,6 +125,14 @@ namespace LearnClassesAndObjects
         }
         public Product MinCalories(List<Product> listProducts)
         {
+            if (listProducts == null)
+            {
+                return null;
+            }
+            if (listProducts.Count == 0)
+            {
+                return null;
+            }
             Product Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
@@ -113,6 +145,14 @@ namespace LearnClassesAndObjects
         }
         public Product MaxWeight(List<Product> listProducts)
         {
+            if (listProducts == null)
+            {
+                return null;
+            }
+            if (listProducts.Count == 0)
+            {
+                return null;
+            }
             Product Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
@@ -125,6 +165,14 @@ namespace LearnClassesAndObjects
         }
         public Product MinWeight(List<Product> listProducts)
         {
+            if (listProducts == null)
+            {
+                return null;
+            }
+            if (listProducts.Count == 0)
+            {
+                return null;
+            }
             Product Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
