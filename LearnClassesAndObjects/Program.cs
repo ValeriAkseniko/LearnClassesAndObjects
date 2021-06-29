@@ -46,7 +46,7 @@ namespace LearnClassesAndObjects
             Products.Add(Cheese);
             Products.Add(Milk);
             Products.Add(Sausage);
-            productService.Print((productService.MinWeight(Products)));
+            Console.WriteLine(productService.MinPrice(Products).GetInfo());
 
 
 

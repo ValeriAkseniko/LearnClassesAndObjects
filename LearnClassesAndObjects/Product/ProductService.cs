@@ -63,80 +63,74 @@ namespace LearnClassesAndObjects
                 }
             }
         }
-        public List<Product> MaxPrice(List<Product> listProducts)
+        public Product MaxPrice(List<Product> listProducts)
         {
-            List<Product> Result = new List<Product>();
-            Result.Add(listProducts[0]);
+            Product Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
-                if (Result[0].Price < listProducts[i].Price)
+                if (Result.Price < listProducts[i].Price)
                 {
-                    Result[0]= listProducts[i];
+                    Result = listProducts[i];
                 }
             }
             return Result;
         }
-        public List<Product> MinPrice(List<Product> listProducts)
+        public Product MinPrice(List<Product> listProducts)
         {
-            List<Product> Result = new List<Product>();
-            Result.Add(listProducts[0]);
+            Product Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
-                if (Result[0].Price > listProducts[i].Price)
+                if (Result.Price > listProducts[i].Price)
                 {
-                    Result[0] = listProducts[i];
+                    Result = listProducts[i];
                 }
             }
             return Result;
         }
-        public List<Product> MaxCalories(List<Product> listProducts)
+        public Product MaxCalories(List<Product> listProducts)
         {
-            List<Product> Result = new List<Product>();
-            Result.Add(listProducts[0]);
+            Product Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
-                if (Result[0].Calories < listProducts[i].Calories)
+                if (Result.Calories < listProducts[i].Calories)
                 {
-                    Result[0] = listProducts[i];
+                    Result = listProducts[i];
                 }
             }
             return Result;
         }
-        public List<Product> MinCalories(List<Product> listProducts)
+        public Product MinCalories(List<Product> listProducts)
         {
-            List<Product> Result = new List<Product>();
-            Result.Add(listProducts[0]);
+            Product Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
-                if (Result[0].Calories > listProducts[i].Calories)
+                if (Result.Calories > listProducts[i].Calories)
                 {
-                    Result[0] = listProducts[i];
+                    Result = listProducts[i];
                 }
             }
             return Result;
         }
-        public List<Product> MaxWeight(List<Product> listProducts)
+        public Product MaxWeight(List<Product> listProducts)
         {
-            List<Product> Result = new List<Product>();
-            Result.Add(listProducts[0]);
+            Product Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
-                if (Result[0].Weight < listProducts[i].Weight)
+                if (Result.Weight < listProducts[i].Weight)
                 {
-                    Result[0] = listProducts[i];
+                    Result = listProducts[i];
                 }
             }
             return Result;
         }
-        public List<Product> MinWeight(List<Product> listProducts)
+        public Product MinWeight(List<Product> listProducts)
         {
-            List<Product> Result = new List<Product>();
-            Result.Add(listProducts[0]);
+            Product Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
-                if (Result[0].Weight > listProducts[i].Weight)
+                if (Result.Weight > listProducts[i].Weight)
                 {
-                    Result[0] = listProducts[i];
+                    Result = listProducts[i];
                 }
             }
             return Result;
