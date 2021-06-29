@@ -26,7 +26,7 @@ namespace LearnClassesAndObjects
             };
             Product Milk = new Product
             {
-                Calories = 140.2,
+                Calories = 67.2,
                 ID = Guid.NewGuid(),
                 Name = "Milk",
                 Weight = 1,
@@ -35,7 +35,7 @@ namespace LearnClassesAndObjects
             };
             Product Sausage = new Product
             {
-                Calories = 140.2,
+                Calories = 200.2,
                 ID = Guid.NewGuid(),
                 Name = "Sausage",
                 Weight = 1.5,
@@ -46,9 +46,9 @@ namespace LearnClassesAndObjects
             Products.Add(Cheese);
             Products.Add(Milk);
             Products.Add(Sausage);
-            productService.SortByName(Products);
-            productService.Print(Products);
-            
+            Console.WriteLine(productService.MinPrice(Products).GetInfo());
+
+
 
             Console.ReadKey();
         }
