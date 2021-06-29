@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LearnClassesAndObjects.TypeProduct;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,39 +16,58 @@ namespace LearnClassesAndObjects
         static ProductService productService = new ProductService();
         static void Main(string[] args)
         {
-            Product Cheese = new Product
+            BaseProduct BubbleGum = new BaseProduct
             {
                 Calories = 140.2,
                 ID = Guid.NewGuid(),
-                Name = "Chesse",
-                Weight = 115.3,
-                Price = 250.5m,
+                Name = "Orbit",
+                Price = 30m,
                 CreationDate = DateTime.Now
             };
-            Product Milk = new Product
+            LiquidProduct Milk = new LiquidProduct
             {
                 Calories = 67.2,
                 ID = Guid.NewGuid(),
                 Name = "Milk",
-                Weight = 1,
                 Price = 78.5m,
+                Volume = 1,
                 CreationDate = DateTime.Now
             };
-            Product Sausage = new Product
+            SolidProduct Sausage = new SolidProduct
             {
                 Calories = 200.2,
                 ID = Guid.NewGuid(),
                 Name = "Sausage",
-                Weight = 1.5,
                 Price = 215m,
+                Weight = 0.2,
                 CreationDate = DateTime.Now
             };
-            List<Product> Products = new List<Product>();
-            Products.Add(Cheese);
+            LiquidProduct Water = new LiquidProduct
+            {
+                Calories = 10,
+                ID = Guid.NewGuid(),
+                Name = "Voljanka",
+                Price = 45m,
+                Volume = 0.5,
+                CreationDate = DateTime.Now
+            };
+            SolidProduct Potato = new SolidProduct
+            {
+                Calories = 125,
+                ID = Guid.NewGuid(),
+                Name = "Belorus potato",
+                Price = 70m,
+                Weight = 1,
+                CreationDate = DateTime.Now
+            };            
+            List<BaseProduct> Products = new List<BaseProduct>();
+            Products.Add(BubbleGum);
             Products.Add(Milk);
             Products.Add(Sausage);
-            Console.WriteLine(productService.MinPrice(Products).GetInfo());
-
+            Products.Add(Water);
+            Products.Add(Potato);
+            List<SolidProduct> solidProducts = new List<SolidProduct>() {Sausage,Potato };
+            productService.Print(Products);
 
 
             Console.ReadKey();

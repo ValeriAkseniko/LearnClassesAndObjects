@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LearnClassesAndObjects.TypeProduct;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,16 +9,20 @@ namespace LearnClassesAndObjects
 {
     class ProductService
     {
-        public void Print(List<Product> listProducts)
+        public void Print(List<BaseProduct> listProducts)
         {
             for (int i = 0; i < listProducts.Count; i++)
             {
                 Console.WriteLine(listProducts[i].GetInfo());
             }
         }
-        public void SortByPrice(List<Product> listProducts)
+        public void SortByPrice(List<BaseProduct> listProducts)
         {
-            Product blank;
+            if (listProducts == null)
+            {
+                return;
+            }
+            BaseProduct blank;
             for (int i = 0; i < listProducts.Count; i++)
             {
                 for (int j = 0; j < listProducts.Count; j++)
@@ -31,9 +36,13 @@ namespace LearnClassesAndObjects
                 }
             }
         }
-        public void SortByWeight(List<Product> listProducts)
+        public void SortByWeight(List<SolidProduct> listProducts)
         {
-            Product blank;
+            if (listProducts == null)
+            {
+                return;
+            }
+            SolidProduct blank;
             for (int i = 0; i < listProducts.Count; i++)
             {
                 for (int j = 0; j < listProducts.Count; j++)
@@ -47,9 +56,13 @@ namespace LearnClassesAndObjects
                 }
             }
         }
-        public void SortByName(List<Product> listProducts)
+        public void SortByName(List<BaseProduct> listProducts)
         {
-            Product blank;
+            if (listProducts == null)
+            {
+                return;
+            }
+            BaseProduct blank;
             for (int i = 0; i < listProducts.Count; i++)
             {
                 for (int j = 0; j < listProducts.Count; j++)
@@ -63,7 +76,7 @@ namespace LearnClassesAndObjects
                 }
             }
         }
-        public Product MaxPrice(List<Product> listProducts)
+        public BaseProduct MaxPrice(List<BaseProduct> listProducts)
         {
             if (listProducts == null)
             {
@@ -73,7 +86,7 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            Product Result = listProducts[0];
+            BaseProduct Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
                 if (Result.Price < listProducts[i].Price)
@@ -83,7 +96,7 @@ namespace LearnClassesAndObjects
             }
             return Result;
         }
-        public Product MinPrice(List<Product> listProducts)
+        public BaseProduct MinPrice(List<BaseProduct> listProducts)
         {
             if (listProducts == null)
             {
@@ -93,7 +106,7 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            Product Result = listProducts[0];
+            BaseProduct Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
                 if (Result.Price > listProducts[i].Price)
@@ -103,7 +116,7 @@ namespace LearnClassesAndObjects
             }
             return Result;
         }
-        public Product MaxCalories(List<Product> listProducts)
+        public BaseProduct MaxCalories(List<BaseProduct> listProducts)
         {
             if (listProducts == null)
             {
@@ -113,7 +126,7 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            Product Result = listProducts[0];
+            BaseProduct Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
                 if (Result.Calories < listProducts[i].Calories)
@@ -123,7 +136,7 @@ namespace LearnClassesAndObjects
             }
             return Result;
         }
-        public Product MinCalories(List<Product> listProducts)
+        public BaseProduct MinCalories(List<BaseProduct> listProducts)
         {
             if (listProducts == null)
             {
@@ -133,7 +146,7 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            Product Result = listProducts[0];
+            BaseProduct Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
                 if (Result.Calories > listProducts[i].Calories)
@@ -143,7 +156,7 @@ namespace LearnClassesAndObjects
             }
             return Result;
         }
-        public Product MaxWeight(List<Product> listProducts)
+        public SolidProduct MaxWeight(List<SolidProduct> listProducts)
         {
             if (listProducts == null)
             {
@@ -153,7 +166,7 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            Product Result = listProducts[0];
+            SolidProduct Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
                 if (Result.Weight < listProducts[i].Weight)
@@ -163,7 +176,7 @@ namespace LearnClassesAndObjects
             }
             return Result;
         }
-        public Product MinWeight(List<Product> listProducts)
+        public SolidProduct MinWeight(List<SolidProduct> listProducts)
         {
             if (listProducts == null)
             {
@@ -173,7 +186,7 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            Product Result = listProducts[0];
+            SolidProduct Result = listProducts[0];
             for (int i = 0; i < listProducts.Count; i++)
             {
                 if (Result.Weight > listProducts[i].Weight)
@@ -183,6 +196,6 @@ namespace LearnClassesAndObjects
             }
             return Result;
         }
-       
+
     }
 }
