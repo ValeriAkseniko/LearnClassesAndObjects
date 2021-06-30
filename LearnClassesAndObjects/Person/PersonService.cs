@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -290,10 +291,20 @@ namespace LearnClassesAndObjects
                     person.Height = double.Parse(strArray[5]);
                     person.Weight = double.Parse(strArray[6]);
                     person.Id = int.Parse(strArray[7]);
-                    persons.Add(person);                    
+                    persons.Add(person);
                 }
                 return persons;
             }
+        }
+        public string ConvertToJson(List<Person> listPerson)
+        {
+            string json = JsonConvert.SerializeObject(listPerson);
+            return json;
+        }
+        public List<Person> ConverForJson(string strJson)
+        {
+            List<Person> person = JsonConvert.DeserializeObject<List<Person>>(strJson);
+            return person;
         }
     }
 }

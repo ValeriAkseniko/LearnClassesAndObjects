@@ -1,4 +1,5 @@
 ﻿using LearnClassesAndObjects.TypeProduct;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -195,6 +196,16 @@ namespace LearnClassesAndObjects
                 }
             }
             return Result;
+        }
+        public string ConvertToJson(List<BaseProduct> listProducts)
+        {
+            string json = JsonConvert.SerializeObject(listProducts);
+            return json;
+        }
+        public List<BaseProduct> ConverForJson(string strJson)
+        {
+            List<BaseProduct> Products = JsonConvert.DeserializeObject<List<BaseProduct>>(strJson);
+            return Products;
         }
 
     }

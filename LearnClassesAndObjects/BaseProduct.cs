@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace LearnClassesAndObjects
 {
     class BaseProduct
-    {
-        private int Test;
+    {       
         public Guid ID { get; set; }
         public string Name { get; set; }
         public double Calories { get; set; }
