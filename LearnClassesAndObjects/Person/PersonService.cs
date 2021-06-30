@@ -258,19 +258,18 @@ namespace LearnClassesAndObjects
         }
         public void WriteToTxt(string writePath, Person person, bool append)
         {
+
             using (StreamWriter streamWriter = new StreamWriter(writePath, append, Encoding.Default))
             {
                 streamWriter.WriteLine(person.InfoForWrite());
             }
         }
-        public void WriteToTxt(string writePath,List<Person> listPersons,bool append)
+        public void WriteToTxt(string writePath,List<Person> listPersons)
         {
-            using (StreamWriter streamWriter = new StreamWriter(writePath,append,Encoding.Default))
+            string json = ConvertToJson(listPersons);
+            using (StreamWriter streamWriter = new StreamWriter(writePath,false,Encoding.Default))
             {
-                for (int i = 0; i < listPersons.Count; i++)
-                {
-                    streamWriter.WriteLine(listPersons[i].InfoForWrite());
-                }
+                streamWriter.Write(json);
             }
         }
         public List<Person> ReadFromTxt(string readPath)
@@ -281,27 +280,17 @@ namespace LearnClassesAndObjects
                 while (!streamReader.EndOfStream)
                 {
                     string line = streamReader.ReadLine();
-                    string[] strArray = line.Split('|');
-                    Person person = new Person();
-                    person.FirstName = strArray[0];
-                    person.LastName = strArray[1];
-                    person.MiddleName = strArray[2];
-                    person.Gender = (Gender)Enum.Parse(typeof(Gender), strArray[3]);
-                    person.Birthday = DateTime.Parse(strArray[4]);
-                    person.Height = double.Parse(strArray[5]);
-                    person.Weight = double.Parse(strArray[6]);
-                    person.Id = int.Parse(strArray[7]);
-                    persons.Add(person);
-                }
+                    persons = ConvertFromJson(line);
+                }                
                 return persons;
             }
         }
-        public string ConvertToJson(List<Person> listPerson)
+        private string ConvertToJson(List<Person> listPerson)
         {
             string json = JsonConvert.SerializeObject(listPerson);
             return json;
         }
-        public List<Person> ConverForJson(string strJson)
+        private List<Person> ConvertFromJson(string strJson)
         {
             List<Person> person = JsonConvert.DeserializeObject<List<Person>>(strJson);
             return person;
