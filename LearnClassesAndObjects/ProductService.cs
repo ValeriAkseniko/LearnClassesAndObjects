@@ -1,6 +1,8 @@
 ﻿using LearnClassesAndObjects.TypeProduct;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -195,6 +197,37 @@ namespace LearnClassesAndObjects
                 }
             }
             return Result;
+        }
+        public string ConvertToJson(List<BaseProduct> listProducts)
+        {
+            string json = JsonConvert.SerializeObject(listProducts);
+            return json;
+        }
+        public List<BaseProduct> ConvertFromJson(string strJson)
+        {
+            List<BaseProduct> Products = JsonConvert.DeserializeObject<List<BaseProduct>>(strJson);
+            return Products;
+        }
+        public void WriteToTxt(string writePath, List<BaseProduct> listProducts)
+        {
+            string json = ConvertToJson(listProducts);
+            using (StreamWriter streamWriter = new StreamWriter(writePath, false, Encoding.Default))
+            {
+                streamWriter.Write(json);
+            }
+        }
+        public List<BaseProduct> ReadFromTxt(string readPath)
+        {
+            using (StreamReader streamReader = new StreamReader(readPath))
+            {
+                List<BaseProduct> persons = new List<BaseProduct>();
+                while (!streamReader.EndOfStream)
+                {
+                    string line = streamReader.ReadLine();
+                    persons = ConvertFromJson(line);
+                }
+                return persons;
+            }
         }
 
     }
