@@ -46,7 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animals\Cat.cs" />
+    <Compile Include="Animals\Cow.cs" />
+    <Compile Include="Animals\Dog.cs" />
     <Compile Include="Gender.cs" />
+    <Compile Include="GlobalInterfaces\IPersonService.cs" />
+    <Compile Include="GlobalInterfaces\ISpeaker.cs" />
     <Compile Include="Person\PersonService.cs" />
     <Compile Include="Person\Person.cs" />
     <Compile Include="Point.cs" />

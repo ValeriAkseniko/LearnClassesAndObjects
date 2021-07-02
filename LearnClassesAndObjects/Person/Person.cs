@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearnClassesAndObjects
 {
-    class Person
+    public class Person
     {        
         private double height;
         private double weight;

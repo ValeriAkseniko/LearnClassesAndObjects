@@ -1,4 +1,6 @@
-﻿using LearnClassesAndObjects.TypeProduct;
+﻿using LearnClassesAndObjects.Animals;
+using LearnClassesAndObjects.GlobalInterfaces;
+using LearnClassesAndObjects.TypeProduct;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,38 +15,29 @@ namespace LearnClassesAndObjects
     {
         const string fileName = "listPerson.txt";
         static string path = $@"C:\Users\valer\Desktop\{fileName}";
-        static PersonService personService = new PersonService();
+        IPersonService personService;
         static ProductService productService = new ProductService();
+        public Program(IPersonService personService)
+        {
+            this.personService = personService;
+        }
         static void Main(string[] args)
         {
-            Person popka = new Person
+            Cow testcow = new Cow("Буренка");
+            Dog testdog = new Dog();
+            Cat testcat = new Cat();
+            List<ISpeaker> speakers = new List<ISpeaker>();
+            speakers.Add(testcat);
+            speakers.Add(testdog);
+            speakers.Add(testcow);
+
+            for (int i = 0; i < speakers.Count; i++)
             {
-                FirstName = "asd",
-                LastName = "sad",
-                MiddleName = "sad",
-                Birthday = new DateTime(1996, 08, 14),
-                Weight = 123,
-                Height = 333,
-                Id = 122,
-                Gender = Gender.Man,
-            };
-            Person popka1 = new Person
-            {
-                FirstName = "aqwq",
-                LastName = "sad",
-                MiddleName = "sad",
-                Birthday = new DateTime(1998, 08, 14),
-                Weight = 123,
-                Height = 12,
-                Id = 122,
-                Gender = Gender.Man,
-            };
-            List<Person> LOL = new List<Person>();
-            LOL.Add(popka);
-            LOL.Add(popka1);
-            personService.WriteToTxt(path, LOL);
-            LOL = personService.ReadFromTxt(path);
-            personService.Print(LOL);
+                speakers[i].SaySound();
+            }
+            Cow Jyja = new Cow("Жужа");
+
+            Jyja.SaySound();
             Console.ReadKey();
         }
 

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using LearnClassesAndObjects.GlobalInterfaces;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LearnClassesAndObjects
 {
-    class PersonService
+    public class PersonService : IPersonService
     {
         public void Print(List<Person> listPerson)
         {
@@ -264,10 +265,10 @@ namespace LearnClassesAndObjects
                 streamWriter.WriteLine(person.InfoForWrite());
             }
         }
-        public void WriteToTxt(string writePath,List<Person> listPersons)
+        public void WriteToTxt(string writePath, List<Person> listPersons)
         {
             string json = ConvertToJson(listPersons);
-            using (StreamWriter streamWriter = new StreamWriter(writePath,false,Encoding.Default))
+            using (StreamWriter streamWriter = new StreamWriter(writePath, false, Encoding.Default))
             {
                 streamWriter.Write(json);
             }
@@ -281,7 +282,7 @@ namespace LearnClassesAndObjects
                 {
                     string line = streamReader.ReadLine();
                     persons = ConvertFromJson(line);
-                }                
+                }
                 return persons;
             }
         }
