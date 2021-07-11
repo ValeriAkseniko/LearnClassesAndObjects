@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace LearnClassesAndObjects
 {
     public class Person
-    {        
+    {    
         private double height;
         private double weight;
         private string firstName;
