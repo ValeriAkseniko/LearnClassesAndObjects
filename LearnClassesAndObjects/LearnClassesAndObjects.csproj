@@ -49,6 +49,10 @@
     <Compile Include="Animals\Cat.cs" />
     <Compile Include="Animals\Cow.cs" />
     <Compile Include="Animals\Dog.cs" />
+    <Compile Include="Flat\FlatType.cs" />
+    <Compile Include="Flat\FlatWithAccessorMethods.cs" />
+    <Compile Include="Flat\FlatWithAutoProperties.cs" />
+    <Compile Include="Flat\FlatWithProperties.cs" />
     <Compile Include="FractionalNumbers.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="GlobalInterfaces\IPersonService.cs" />
