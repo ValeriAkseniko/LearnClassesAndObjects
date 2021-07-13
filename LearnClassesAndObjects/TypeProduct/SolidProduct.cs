@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearnClassesAndObjects.TypeProduct
 {
-    sealed class SolidProduct : BaseProduct
+    public sealed class SolidProduct : BaseProduct
     {
         const string Unit = "kilograms";
         public double Weight { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearnClassesAndObjects
 {
-    class BaseProduct
+    public class BaseProduct
     {       
         public Guid ID { get; set; }
         public string Name { get; set; }

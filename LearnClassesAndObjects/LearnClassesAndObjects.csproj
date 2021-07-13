@@ -60,6 +60,7 @@
     <Compile Include="FractionalNumbers.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="GlobalInterfaces\IPersonService.cs" />
+    <Compile Include="GlobalInterfaces\IProductService.cs" />
     <Compile Include="GlobalInterfaces\ISpeaker.cs" />
     <Compile Include="Person\PersonService.cs" />
     <Compile Include="Person\Person.cs" />
