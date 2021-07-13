@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearnClassesAndObjects.Flat
 {
-    enum EnumFlatType
+    enum FlatType
     {
         
         Studio = 1,

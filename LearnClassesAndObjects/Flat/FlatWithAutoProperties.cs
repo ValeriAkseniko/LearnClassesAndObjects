@@ -12,7 +12,7 @@ namespace LearnClassesAndObjects.Flat
         public int FlatNumber { get; set; }
         public double Area { get; set; }
         public string Owner { get; set; }
-        public EnumFlatType FlatType { get; set; }
+        public FlatType FlatType { get; set; }
         
         public string GetInfo()
         {

@@ -24,13 +24,13 @@ namespace LearnClassesAndObjects
             test.SetFlatNumber(25);
             test.SetId(Guid.NewGuid());
             test.SetOwner("Vania Pechkin");
-            test.SetFlatType(EnumFlatType.Studio);
+            test.SetFlatType(FlatType.Studio);
             Console.WriteLine(test.GetInfo());
             Console.WriteLine();
             FlatWithProperties test2 = new FlatWithProperties();
             test2.Area = 70.5;
             test2.FlatNumber = 13;
-            test2.FlatType = EnumFlatType.TwoRoom;
+            test2.FlatType = FlatType.TwoRoom;
             test2.Owner = "Dmitri Sobkin";
             test2.Id = Guid.NewGuid();
             Console.WriteLine(test2.GetInfo());
@@ -38,7 +38,7 @@ namespace LearnClassesAndObjects
             FlatWithAutoProperties test3 = new FlatWithAutoProperties();
             test3.Area = 250.4;
             test3.FlatNumber = 18;
-            test3.FlatType = EnumFlatType.FourRoom;
+            test3.FlatType = FlatType.FourRoom;
             test3.Owner = "Vitali Volkov";
             test3.Id = Guid.NewGuid();
             Console.WriteLine(test3.GetInfo());
