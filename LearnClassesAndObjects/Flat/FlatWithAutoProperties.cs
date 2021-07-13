@@ -8,23 +8,12 @@ namespace LearnClassesAndObjects.Flat
 {
     class FlatWithAutoProperties
     {
-        private Guid Id { get; set; }
-        private int FlatNumber { get; set; }
-        private double Area { get; set; }
-        private string Owner { get; set; }
-        private Enum FlatType { get; set; }
-        public FlatWithAutoProperties()
-        {
-
-        }
-        public FlatWithAutoProperties(Guid id,int flatNumber,double area,string owner,Enum flatType)
-        {
-            Id = id;
-            FlatNumber = flatNumber;
-            Area = area;
-            Owner = owner;
-            FlatType = flatType;
-        }
+        public Guid Id { get; set; }
+        public int FlatNumber { get; set; }
+        public double Area { get; set; }
+        public string Owner { get; set; }
+        public EnumFlatType FlatType { get; set; }
+        
         public string GetInfo()
         {
             return $"{Id} ,{FlatNumber}, {Area}, {Owner}, {FlatType}";

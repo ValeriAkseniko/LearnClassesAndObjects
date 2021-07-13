@@ -12,7 +12,7 @@ namespace LearnClassesAndObjects.Flat
         private int flatNumber;
         private double area;
         private string owner;
-        private Enum flatType;
+        private EnumFlatType flatType;
         public Guid Id
         {
             get { return this.id; }
@@ -33,7 +33,7 @@ namespace LearnClassesAndObjects.Flat
             get { return this.owner; }
             set { this.owner = value; }
         }
-        public Enum FlatType
+        public EnumFlatType FlatType
         {
             get { return this.flatType; }
             set { this.flatType = value; }
