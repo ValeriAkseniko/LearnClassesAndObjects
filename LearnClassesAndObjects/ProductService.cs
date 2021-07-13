@@ -1,4 +1,5 @@
-﻿using LearnClassesAndObjects.TypeProduct;
+﻿using LearnClassesAndObjects.GlobalInterfaces;
+using LearnClassesAndObjects.TypeProduct;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LearnClassesAndObjects
 {
-    class ProductService
+    class ProductService : IProductService
     {
         public void Print(List<BaseProduct> listProducts)
         {
@@ -18,6 +19,7 @@ namespace LearnClassesAndObjects
                 Console.WriteLine(listProducts[i].GetInfo());
             }
         }
+
         public void SortByPrice(List<BaseProduct> listProducts)
         {
             if (listProducts == null)
@@ -38,6 +40,7 @@ namespace LearnClassesAndObjects
                 }
             }
         }
+
         public void SortByWeight(List<SolidProduct> listProducts)
         {
             if (listProducts == null)
@@ -58,6 +61,7 @@ namespace LearnClassesAndObjects
                 }
             }
         }
+
         public void SortByName(List<BaseProduct> listProducts)
         {
             if (listProducts == null)
@@ -78,6 +82,7 @@ namespace LearnClassesAndObjects
                 }
             }
         }
+
         public BaseProduct MaxPrice(List<BaseProduct> listProducts)
         {
             if (listProducts == null)
@@ -98,6 +103,7 @@ namespace LearnClassesAndObjects
             }
             return Result;
         }
+
         public BaseProduct MinPrice(List<BaseProduct> listProducts)
         {
             if (listProducts == null)
@@ -118,6 +124,7 @@ namespace LearnClassesAndObjects
             }
             return Result;
         }
+
         public BaseProduct MaxCalories(List<BaseProduct> listProducts)
         {
             if (listProducts == null)
@@ -138,6 +145,7 @@ namespace LearnClassesAndObjects
             }
             return Result;
         }
+
         public BaseProduct MinCalories(List<BaseProduct> listProducts)
         {
             if (listProducts == null)
@@ -158,6 +166,7 @@ namespace LearnClassesAndObjects
             }
             return Result;
         }
+
         public SolidProduct MaxWeight(List<SolidProduct> listProducts)
         {
             if (listProducts == null)
@@ -178,6 +187,7 @@ namespace LearnClassesAndObjects
             }
             return Result;
         }
+
         public SolidProduct MinWeight(List<SolidProduct> listProducts)
         {
             if (listProducts == null)
@@ -198,16 +208,19 @@ namespace LearnClassesAndObjects
             }
             return Result;
         }
+
         public string ConvertToJson(List<BaseProduct> listProducts)
         {
             string json = JsonConvert.SerializeObject(listProducts);
             return json;
         }
+
         public List<BaseProduct> ConvertFromJson(string strJson)
         {
             List<BaseProduct> Products = JsonConvert.DeserializeObject<List<BaseProduct>>(strJson);
             return Products;
         }
+
         public void WriteToTxt(string writePath, List<BaseProduct> listProducts)
         {
             string json = ConvertToJson(listProducts);
@@ -216,6 +229,7 @@ namespace LearnClassesAndObjects
                 streamWriter.Write(json);
             }
         }
+
         public List<BaseProduct> ReadFromTxt(string readPath)
         {
             using (StreamReader streamReader = new StreamReader(readPath))
