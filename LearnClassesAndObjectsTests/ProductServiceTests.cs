@@ -269,18 +269,6 @@ namespace LearnClassesAndObjects.Tests
         }
 
         [TestMethod()]
-        public void MaxCaloriesTestNull()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void MaxCaloriesTestEmpty()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
         public void MaxCaloriesTest()
         {
             IProductService service = new ProductService();
@@ -319,40 +307,5 @@ namespace LearnClassesAndObjects.Tests
             Assert.IsTrue(result == product2);
         }
 
-        [TestMethod()]
-        public void MaxWeightTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void MinWeightTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void ConvertToJsonTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void ConvertFromJsonTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void WriteToTxtTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void ReadFromTxtTest()
-        {
-            Assert.Fail();
-        }
     }
 }

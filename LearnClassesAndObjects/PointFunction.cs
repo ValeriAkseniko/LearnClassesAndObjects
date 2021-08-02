@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearnClassesAndObjects
 {
-    static class PointFunction
+    public static class PointFunction
     {
         
         static public Point Plus(Point a, Point b)
