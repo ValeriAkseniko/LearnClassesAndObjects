@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LearnClassesAndObjects
 {
-    class ProductService : IProductService
+    public class ProductService : IProductService
     {
         public void Print(List<BaseProduct> listProducts)
         {

@@ -16,5 +16,6 @@ namespace LearnClassesAndObjects.GlobalInterfaces
         BaseProduct MaxPrice(List<BaseProduct> listProducts);
         BaseProduct MinPrice(List<BaseProduct> listProducts);
         BaseProduct MaxCalories(List<BaseProduct> listProducts);
+        BaseProduct MinCalories(List<BaseProduct> listProducts);
     }
 }
