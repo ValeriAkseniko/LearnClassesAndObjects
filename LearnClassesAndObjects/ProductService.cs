@@ -14,6 +14,10 @@ namespace LearnClassesAndObjects
     {
         public void Print(List<BaseProduct> listProducts)
         {
+            if (listProducts == null)
+            {
+                return;
+            }
             for (int i = 0; i < listProducts.Count; i++)
             {
                 Console.WriteLine(listProducts[i].GetInfo());
