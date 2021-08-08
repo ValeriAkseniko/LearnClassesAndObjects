@@ -14,6 +14,10 @@ namespace LearnClassesAndObjects
     {
         public void Print(List<Person> listPerson)
         {
+            if (listPerson == null)
+            {
+                return;
+            }
             for (int i = 0; i < listPerson.Count; i++)
             {
                 Console.WriteLine(listPerson[i].GetInfo());
@@ -21,6 +25,10 @@ namespace LearnClassesAndObjects
         }
         public void SortByHighest(Person[] array)
         {
+            if (array == null)
+            {
+                return;
+            }
             Person blank;
             for (int i = 0; i < array.Length - 1; i++)
             {
@@ -166,6 +174,10 @@ namespace LearnClassesAndObjects
         }
         public void SortByFullName(Person[] array)
         {
+            if (array == null)
+            {
+                return;
+            }
             Person blank;
             for (int i = 0; i < array.Length - 1; i++)
             {
@@ -267,6 +279,10 @@ namespace LearnClassesAndObjects
         }
         public void WriteToTxt(string writePath, List<Person> listPersons)
         {
+            if (listPersons == null || writePath == null)
+            {
+                return;
+            }
             string json = ConvertToJson(listPersons);
             using (StreamWriter streamWriter = new StreamWriter(writePath, false, Encoding.Default))
             {
@@ -275,6 +291,10 @@ namespace LearnClassesAndObjects
         }
         public List<Person> ReadFromTxt(string readPath)
         {
+            if (readPath == null)
+            {
+                return null;
+            }
             using (StreamReader streamReader = new StreamReader(readPath))
             {
                 List<Person> persons = new List<Person>();
