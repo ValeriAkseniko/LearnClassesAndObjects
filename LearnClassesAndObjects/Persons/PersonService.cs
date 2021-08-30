@@ -133,45 +133,32 @@ namespace LearnClassesAndObjects
             }
             return array[indexYoungest];
         }
-        public List<Person> GetMaleList(Person[] array)
-        {
-            var listPerson = new List<Person>();
-            if (array == null)
+        public List<Person> GetMaleList(List<Person> list)
+        {            
+            if (list == null)
             {
                 return null;
             }
-            if (array.Length == 0)
+            if (list.Count == 0)
             {
                 return null;
             }
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i].Gender == Gender.Man)
-                {
-                    listPerson.Add(array[i]);
-                }
-            }
-            return listPerson;
+            var malePersons = list.Where(m => m.Gender == Gender.Man).ToList();
+            return malePersons;
         }
-        public List<Person> GetFemaleList(Person[] array)
+        public List<Person> GetFemaleList(List<Person> list)
         {
             var listPerson = new List<Person>();
-            if (array == null)
+            if (list == null)
             {
                 return null;
             }
-            if (array.Length == 0)
+            if (list.Count == 0)
             {
                 return null;
             }
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i].Gender == Gender.Woman)
-                {
-                    listPerson.Add(array[i]);
-                }
-            }
-            return listPerson;
+            var femalePerson = list.Where(f => f.Gender == Gender.Woman).ToList();
+            return femalePerson;
         }
         public void SortByFullName(Person[] array)
         {
