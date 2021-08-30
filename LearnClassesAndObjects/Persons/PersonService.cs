@@ -1,4 +1,6 @@
 ﻿using LearnClassesAndObjects.GlobalInterfaces;
+using LearnClassesAndObjects.Persons;
+using LearnClassesAndObjectsю.Persons;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -315,6 +317,23 @@ namespace LearnClassesAndObjects
         {
             List<Person> person = JsonConvert.DeserializeObject<List<Person>>(strJson);
             return person;
+        }
+
+        public List<SimplePerson> ToSimplePersons(List<Person> persons)
+        {
+            List<SimplePerson> simplePersons = new List<SimplePerson>();
+            foreach (var person in persons)
+            {
+                SimplePerson newperson = new SimplePerson
+                {
+                    Id = person.Id,
+                    FirstName = person.FirstName,
+                    MIddleName = person.MiddleName,
+                    LastName = person.LastName
+                };
+                simplePersons.Add(newperson);
+            }
+            return simplePersons;
         }
     }
 }

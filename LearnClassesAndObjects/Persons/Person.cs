@@ -1,10 +1,11 @@
-﻿using System;
+﻿using LearnClassesAndObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LearnClassesAndObjects
+namespace LearnClassesAndObjectsю.Persons
 {
     public class Person
     {    
@@ -86,7 +87,7 @@ namespace LearnClassesAndObjects
 
         }
         public string Email { get; set; }
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public double Height
         {
@@ -121,7 +122,7 @@ namespace LearnClassesAndObjects
         {
 
         }
-        public Person(int id ,string firstName, string lastName, string middleName, Gender gender, DateTime birthday, double height, double weight, string email = null)
+        public Person(Guid id ,string firstName, string lastName, string middleName, Gender gender, DateTime birthday, double height, double weight, string email = null)
         {
             if (IsValid(firstName))
             {
