@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LearnClassesAndObjects.Persons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,6 @@ namespace LearnClassesAndObjects.GlobalInterfaces
         void SortByHighest(Person[] array);
         void WriteToTxt(string writePath, List<Person> listPersons);
         void WriteToTxt(string writePath, Person person, bool append);
+        List<SimplePerson> ToSimplePersons(List<Person> persons);
     }
 }

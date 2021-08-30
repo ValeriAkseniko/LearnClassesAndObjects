@@ -62,8 +62,9 @@
     <Compile Include="GlobalInterfaces\IPersonService.cs" />
     <Compile Include="GlobalInterfaces\IProductService.cs" />
     <Compile Include="GlobalInterfaces\ISpeaker.cs" />
-    <Compile Include="Person\PersonService.cs" />
-    <Compile Include="Person\Person.cs" />
+    <Compile Include="Persons\PersonService.cs" />
+    <Compile Include="Persons\Person.cs" />
+    <Compile Include="Persons\SimplePerson.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="PointFunction.cs" />
     <Compile Include="BaseProduct.cs" />
