@@ -14,8 +14,8 @@ namespace LearnClassesAndObjects.GlobalInterfaces
         double AverageWeight(List<Person> listPerson);
         Person FirstOlder(Person[] array);
         Person FirstYoung(Person[] array);
-        List<Person> GetFemaleList(Person[] array);
-        List<Person> GetMaleList(Person[] array);
+        List<Person> GetFemaleList(List<Person> list);
+        List<Person> GetMaleList(List<Person> list);
         Person Highest(Person[] array);
         Person Lowest(Person[] array);
         Person PersonFromConsole();
