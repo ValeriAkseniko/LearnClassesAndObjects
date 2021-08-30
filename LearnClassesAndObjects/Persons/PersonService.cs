@@ -55,17 +55,9 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            int indexMaxHighest = 0;
-            double maxHighest = array[0].Height;
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i].Height > maxHighest)
-                {
-                    maxHighest = array[i].Height;
-                    indexMaxHighest = i;
-                }
-            }
-            return array[indexMaxHighest];
+            var maxHeight = array.Max(h => h.Height);
+            var heighest = array.FirstOrDefault(h => h.Height == maxHeight);
+            return heighest;
         }
         public Person Lowest(Person[] array)
         {
@@ -77,17 +69,9 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            int indexMinHighest = 0;
-            double minHighest = array[0].Height;
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i].Height < minHighest)
-                {
-                    minHighest = array[i].Height;
-                    indexMinHighest = i;
-                }
-            }
-            return array[indexMinHighest];
+            var minHeight = array.Min(h => h.Height);
+            var lowest = array.FirstOrDefault(h => h.Height == minHeight);
+            return lowest;
         }
         public Person FirstOlder(Person[] array)
         {
@@ -99,17 +83,9 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            int indexOldest = 0;
-            int oldest = array[0].Age;
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i].Age > oldest)
-                {
-                    oldest = array[i].Age;
-                    indexOldest = i;
-                }
-            }
-            return array[indexOldest];
+            var maxAge = array.Max(a => a.Age);
+            var older = array.FirstOrDefault(a => a.Age == maxAge);
+            return older;
         }
         public Person FirstYoung(Person[] array)
         {
@@ -121,17 +97,9 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            int indexYoungest = 0;
-            int youngest = array[0].Age;
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i].Age < youngest)
-                {
-                    youngest = array[i].Age;
-                    indexYoungest = i;
-                }
-            }
-            return array[indexYoungest];
+            var minAge = array.Min(a => a.Age);
+            var young = array.FirstOrDefault(a => a.Age == minAge);
+            return young;
         }
         public List<Person> GetMaleList(List<Person> list)
         {            

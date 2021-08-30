@@ -97,15 +97,9 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            BaseProduct Result = listProducts[0];
-            for (int i = 0; i < listProducts.Count; i++)
-            {
-                if (Result.Price < listProducts[i].Price)
-                {
-                    Result = listProducts[i];
-                }
-            }
-            return Result;
+            var maxPrice = listProducts.Max(p => p.Price);
+            var result = listProducts.FirstOrDefault(p => p.Price == maxPrice);
+            return result;
         }
 
         public BaseProduct MinPrice(List<BaseProduct> listProducts)
@@ -118,15 +112,9 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            BaseProduct Result = listProducts[0];
-            for (int i = 0; i < listProducts.Count; i++)
-            {
-                if (Result.Price > listProducts[i].Price)
-                {
-                    Result = listProducts[i];
-                }
-            }
-            return Result;
+            var minPrice = listProducts.Min(p => p.Price);
+            var result = listProducts.FirstOrDefault(p => p.Price == minPrice);
+            return result;
         }
 
         public BaseProduct MaxCalories(List<BaseProduct> listProducts)
@@ -139,15 +127,9 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            BaseProduct Result = listProducts[0];
-            for (int i = 0; i < listProducts.Count; i++)
-            {
-                if (Result.Calories < listProducts[i].Calories)
-                {
-                    Result = listProducts[i];
-                }
-            }
-            return Result;
+            var maxCalories = listProducts.Max(c => c.Calories);
+            var result = listProducts.FirstOrDefault(c => c.Calories == maxCalories);
+            return result;
         }
 
         public BaseProduct MinCalories(List<BaseProduct> listProducts)
@@ -160,15 +142,9 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            BaseProduct Result = listProducts[0];
-            for (int i = 0; i < listProducts.Count; i++)
-            {
-                if (Result.Calories > listProducts[i].Calories)
-                {
-                    Result = listProducts[i];
-                }
-            }
-            return Result;
+            var minCalories = listProducts.Min(c => c.Calories);
+            var result = listProducts.FirstOrDefault(c => c.Calories == minCalories);
+            return result;
         }
 
         public SolidProduct MaxWeight(List<SolidProduct> listProducts)
@@ -181,15 +157,9 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            SolidProduct Result = listProducts[0];
-            for (int i = 0; i < listProducts.Count; i++)
-            {
-                if (Result.Weight < listProducts[i].Weight)
-                {
-                    Result = listProducts[i];
-                }
-            }
-            return Result;
+            var maxWeight = listProducts.Max(w => w.Weight);
+            var result = listProducts.FirstOrDefault(w => w.Weight == maxWeight);
+            return result;
         }
 
         public SolidProduct MinWeight(List<SolidProduct> listProducts)
@@ -202,15 +172,9 @@ namespace LearnClassesAndObjects
             {
                 return null;
             }
-            SolidProduct Result = listProducts[0];
-            for (int i = 0; i < listProducts.Count; i++)
-            {
-                if (Result.Weight > listProducts[i].Weight)
-                {
-                    Result = listProducts[i];
-                }
-            }
-            return Result;
+            var minWeight = listProducts.Max(w => w.Weight);
+            var result = listProducts.FirstOrDefault(w => w.Weight == minWeight);
+            return result;
         }
 
         public string ConvertToJson(List<BaseProduct> listProducts)
