@@ -30,19 +30,7 @@ namespace LearnClassesAndObjects
             {
                 return;
             }
-            Person blank;
-            for (int i = 0; i < array.Length - 1; i++)
-            {
-                for (int j = i + 1; j < array.Length; j++)
-                {
-                    if (array[i].Height > array[j].Height)
-                    {
-                        blank = array[i];
-                        array[i] = array[j];
-                        array[j] = blank;
-                    }
-                }
-            }
+            var sortByHighest = array.OrderBy(h => h.Height);
 
         }
         public Person Highest(Person[] array)
@@ -134,19 +122,7 @@ namespace LearnClassesAndObjects
             {
                 return;
             }
-            Person blank;
-            for (int i = 0; i < array.Length - 1; i++)
-            {
-                for (int j = i + 1; j < array.Length; j++)
-                {
-                    if (string.Compare(array[i].GetFullName(), array[j].GetFullName()) > 0)
-                    {
-                        blank = array[i];
-                        array[i] = array[j];
-                        array[j] = blank;
-                    }
-                }
-            }
+            var sortByFullName = array.OrderBy(n => n.GetFullName());
         }
         public double AverageHeight(List<Person> listPerson)
         {

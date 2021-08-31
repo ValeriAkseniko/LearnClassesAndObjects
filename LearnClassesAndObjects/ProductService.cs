@@ -30,19 +30,7 @@ namespace LearnClassesAndObjects
             {
                 return;
             }
-            BaseProduct blank;
-            for (int i = 0; i < listProducts.Count; i++)
-            {
-                for (int j = 0; j < listProducts.Count; j++)
-                {
-                    if (listProducts[i].Price > listProducts[j].Price)
-                    {
-                        blank = listProducts[i];
-                        listProducts[i] = listProducts[j];
-                        listProducts[j] = blank;
-                    }
-                }
-            }
+            var sortByPrice = listProducts.OrderBy(p => p.Price);
         }
 
         public void SortByWeight(List<SolidProduct> listProducts)
@@ -51,19 +39,7 @@ namespace LearnClassesAndObjects
             {
                 return;
             }
-            SolidProduct blank;
-            for (int i = 0; i < listProducts.Count; i++)
-            {
-                for (int j = 0; j < listProducts.Count; j++)
-                {
-                    if (listProducts[i].Weight > listProducts[j].Weight)
-                    {
-                        blank = listProducts[i];
-                        listProducts[i] = listProducts[j];
-                        listProducts[j] = blank;
-                    }
-                }
-            }
+            var sortByWeight = listProducts.OrderBy(w => w.Weight);
         }
 
         public void SortByName(List<BaseProduct> listProducts)
@@ -72,19 +48,7 @@ namespace LearnClassesAndObjects
             {
                 return;
             }
-            BaseProduct blank;
-            for (int i = 0; i < listProducts.Count; i++)
-            {
-                for (int j = 0; j < listProducts.Count; j++)
-                {
-                    if (string.Compare(listProducts[i].Name, listProducts[j].Name) < 0)
-                    {
-                        blank = listProducts[i];
-                        listProducts[i] = listProducts[j];
-                        listProducts[j] = blank;
-                    }
-                }
-            }
+            var sortByName = listProducts.OrderBy(n => n.Name);
         }
 
         public BaseProduct MaxPrice(List<BaseProduct> listProducts)
