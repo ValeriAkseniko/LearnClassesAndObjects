@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{98C139FD-97B0-4E33-B46E-AB94DA5A6F45}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>LearnClassesAndObjects</RootNamespace>
-    <AssemblyName>LearnClassesAndObjects</AssemblyName>
+    <ProjectGuid>{A549E167-F0C6-4CE2-BA27-F51DAAB0419E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LearnClassesAndObjects.ModelInterfaces</RootNamespace>
+    <AssemblyName>LearnClassesAndObjects.ModelInterfaces</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,30 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="ISpeaker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\LearnClassesAndObjects.ModelInterfaces\LearnClassesAndObjects.ModelInterfaces.csproj">
-      <Project>{a549e167-f0c6-4ce2-ba27-f51daab0419e}</Project>
-      <Name>LearnClassesAndObjects.ModelInterfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LearnClassesAndObjects.Models\LearnClassesAndObjects.Models.csproj">
-      <Project>{d232aef0-8b83-4fab-a440-95e2de7773ce}</Project>
-      <Name>LearnClassesAndObjects.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LearnClassesAndObjects.ServiceInterfaces\LearnClassesAndObjects.ServiceInterfaces.csproj">
-      <Project>{0b8c8109-f21f-4e52-b807-3ba3f4588df2}</Project>
-      <Name>LearnClassesAndObjects.ServiceInterfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LearnClassesAndObjects.Services\LearnClassesAndObjects.Services.csproj">
-      <Project>{f978c40a-664b-44b1-81f9-b187e9c2940e}</Project>
-      <Name>LearnClassesAndObjects.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
